@@ -21,14 +21,16 @@ function NewMeetupForm(props) {
       title: enteredTitle,
       image: enteredImage,
       description: enteredDescription,
-      bonusimage: enteredBonusImage,
     };
+    if (enteredBonusImage.bonusimage) {
+      meetupData.bonusimage = selectedMeetup.bonusimage;
+    }
 
     props.onAddMeetup(meetupData);
   }
 
   return (
-    <Card>
+    <div className={classes.addform}>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="title">Naslov</label>
@@ -48,13 +50,13 @@ function NewMeetupForm(props) {
             ref={descriptionInputRef}
           ></textarea>
           <label htmlFor="image">Dodatna slika</label>
-          <input type="url" id="image" ref={bonusimageInputRef} />
+          <input type="url" id="bonusimage" ref={bonusimageInputRef} />
         </div>
         <div className={classes.actions}>
           <button>Dodaj vest</button>
         </div>
       </form>
-    </Card>
+    </div>
   );
 }
 

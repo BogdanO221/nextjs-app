@@ -1,7 +1,28 @@
 .detail {
-  text-align: center;
+  max-width: 100vh;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+  font-family: "Georgia", serif;
+  line-height: 1.6;
 }
 
 .detail img {
   width: 100%;
+
+  object-fit: cover;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.detail h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.detail p {
+  font-size: 1.1rem;
+  text-align: justify;
 }

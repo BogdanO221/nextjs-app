@@ -6,7 +6,7 @@ function MeetupDetail(props) {
       <img src={props.image} alt={props.title} />
       <h1>{props.title}</h1>
       <p>{props.description}</p>
-      <img src={props.bonusimage} alt={props.title} />
+      {props.bonusimage && <img src={props.bonusimage} alt="Dodatna slika" />}
     </section>
   );
 }
