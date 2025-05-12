@@ -15,20 +15,10 @@ function HomePage(props) {
           content="Browse a huge list of highly active React meetups"
         />
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </Fragment>
   );
 }
-
-/*export async function getServerSideProps(context) {
-  const req = context.req;
-  const res = context.res;
-  return {
-    props:{
-      meetups: DUMMY_MEETUPS
-    }
-  }
-}*/
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(
@@ -46,7 +36,6 @@ export async function getStaticProps() {
     props: {
       meetups: meetups.map((meetup) => ({
         title: meetup.title,
-        address: meetup.address,
         image: meetup.image,
         id: meetup._id.toString(),
       })),

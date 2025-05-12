@@ -10,7 +10,7 @@ function MeetupList({ meetups = [] }) {
           id={meetup.id}
           image={meetup.image}
           title={meetup.title}
-          address={meetup.address}
+          bonusimage={meetup.bonusimage}
         />
       ))}
     </ul>
