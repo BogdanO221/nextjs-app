@@ -22,8 +22,10 @@ function NewMeetupForm(props) {
       image: enteredImage,
       description: enteredDescription,
     };
-    if (enteredBonusImage.bonusimage) {
-      meetupData.bonusimage = selectedMeetup.bonusimage;
+
+    // Add bonusimage only if it's not empty
+    if (enteredBonusImage) {
+      meetupData.bonusimage = enteredBonusImage;
     }
 
     props.onAddMeetup(meetupData);
@@ -40,7 +42,6 @@ function NewMeetupForm(props) {
           <label htmlFor="image">Naslovna fotografija</label>
           <input type="url" required id="image" ref={imageInputRef} />
         </div>
-
         <div className={classes.control}>
           <label htmlFor="description">Description</label>
           <textarea
@@ -49,7 +50,9 @@ function NewMeetupForm(props) {
             rows="5"
             ref={descriptionInputRef}
           ></textarea>
-          <label htmlFor="image">Dodatna slika</label>
+        </div>
+        <div className={classes.control}>
+          <label htmlFor="bonusimage">Dodatna slika (opcionalno)</label>
           <input type="url" id="bonusimage" ref={bonusimageInputRef} />
         </div>
         <div className={classes.actions}>

@@ -6,7 +6,11 @@ function MeetupDetail(props) {
       <img src={props.image} alt={props.title} />
       <h1>{props.title}</h1>
       <p>{props.description}</p>
-      {props.bonusimage && <img src={props.bonusimage} alt="Dodatna slika" />}
+      {props.bonusimage && (
+        <div className={classes.bonusImage}>
+          <img src={props.bonusimage} alt="Dodatna slika" />
+        </div>
+      )}
     </section>
   );
 }

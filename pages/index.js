@@ -10,6 +10,7 @@ function HomePage(props) {
     <Fragment>
       <Head>
         <title>React Meetups</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
           content="Browse a huge list of highly active React meetups"
@@ -38,6 +39,7 @@ export async function getStaticProps() {
         title: meetup.title,
         image: meetup.image,
         id: meetup._id.toString(),
+        bonusimage: meetup.bonusimage || null,
       })),
     },
     revalidate: 1,
